@@ -1,5 +1,1 @@
-<div *ngFor="let comment of comments">
-  {{comment.id}}
-  {{comment.name}}
-  {{comment.body}}
-</div>
+<app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
