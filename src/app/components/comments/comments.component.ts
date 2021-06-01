@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {User} from "../../models/User";
+import {Comment} from "../../models/Comment";
+import {CommentService} from "../../services/comment.service";
 
 @Component({
   selector: 'app-comments',
@@ -9,11 +10,13 @@ import {User} from "../../models/User";
 })
 export class CommentsComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  comments: Comment[] = [];
+
+  constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
-    this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/comments').subscribe(value => {
-      console.log(value);
+    this.commentService.getComments().subscribe(value => {
+      this.comments = value;
     })
   }
 

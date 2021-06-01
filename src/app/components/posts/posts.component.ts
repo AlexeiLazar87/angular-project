@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {User} from "../../models/User";
+import {Post} from "../../models/Post";
+import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'app-posts',
@@ -9,11 +9,13 @@ import {User} from "../../models/User";
 })
 export class PostsComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  posts: Post[] = [];
+
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/posts').subscribe(value => {
-      console.log(value);
+    this.postService.getPosts().subscribe(value => {
+      this.posts = value;
     })
   }
 
