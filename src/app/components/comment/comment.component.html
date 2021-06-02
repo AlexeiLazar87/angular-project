@@ -1,6 +1,5 @@
 <div>
   {{comment.id}}
   {{comment.name}}
-  {{comment.body}}
-  <button (click)="goToCommentDetails()">Details</button>
+  <button><a [routerLink]="[comment.id]">Details</a></button>
 </div>

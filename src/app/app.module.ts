@@ -11,6 +11,9 @@ import {CommentComponent} from './components/comment/comment.component';
 import {RouterModule} from "@angular/router";
 import {HomeComponent} from './components/home/home.component';
 import {UserDetailsComponent} from './components/user-details/user-details.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
+import {DeactivatorService} from "./services/deactivator.service";
 
 let routes = [
   {path: 'home', component: HomeComponent},
@@ -18,8 +21,10 @@ let routes = [
     children: [
       {path: ':id', component: UserDetailsComponent}
     ]},
-  {path: 'posts', component: PostsComponent},
-  {path: 'comments', component: CommentsComponent}
+  {path: 'posts', component: PostsComponent, canDeactivate: [DeactivatorService]},
+  {path: 'posts/:id', component: PostDetailsComponent, canActivate: [DeactivatorService]},
+  {path: 'comments', component: CommentsComponent},
+  {path: 'comments/:id', component: CommentDetailsComponent}
 ]
 
 @NgModule({
@@ -33,6 +38,8 @@ let routes = [
     CommentComponent,
     HomeComponent,
     UserDetailsComponent,
+    PostDetailsComponent,
+    CommentDetailsComponent,
   ],
   imports: [
     BrowserModule,
