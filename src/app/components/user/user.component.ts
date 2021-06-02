@@ -7,11 +7,6 @@ import {User} from "../../models";
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-
   @Input()
   user: User;
-
-  constructor() {
-  }
-
 }
