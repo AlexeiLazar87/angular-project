@@ -1,0 +1,12 @@
+<div>
+  <h1>
+    {{user.id}} -
+    {{user.name}} --
+    {{user.username}} --
+    {{user.email}}
+  </h1>
+</div>
+<div>
+  <h2>Posts:</h2>
+  <app-posts [id]="user.id"></app-posts>
+</div>
