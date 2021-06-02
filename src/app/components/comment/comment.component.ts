@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Comment} from "../../models/Comment";
+
+import {Comment} from "../../models";
 
 @Component({
   selector: 'app-comment',
@@ -7,15 +8,7 @@ import {Comment} from "../../models/Comment";
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent {
-
   @Input()
   comment: Comment;
-
-  constructor() {
-  }
-
-  goToCommentDetails(): void {
-    console.log(this.comment);
-  }
 }
 

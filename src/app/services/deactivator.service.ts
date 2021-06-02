@@ -7,8 +7,6 @@ import {Observable} from "rxjs";
 })
 export class DeactivatorService implements CanDeactivate<boolean>, CanActivate {
 
-  constructor() { }
-
   canDeactivate(): boolean {
     return confirm('leave?');
   }
