@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CommentService} from "../../services/comment.service";
-import {Comment} from "../../models/Comment";
+
+import {CommentService} from "../../services";
+import {Comment} from "../../models";
 
 @Component({
   selector: 'app-comment-details',
@@ -9,7 +10,6 @@ import {Comment} from "../../models/Comment";
   styleUrls: ['./comment-details.component.css']
 })
 export class CommentDetailsComponent {
-
   comment: Comment;
 
   constructor(private activatedRoute: ActivatedRoute, private commentService: CommentService) {
@@ -17,5 +17,4 @@ export class CommentDetailsComponent {
       this.commentService.getComment(params.id).subscribe(value => this.comment = value);
     })
   }
-
 }
