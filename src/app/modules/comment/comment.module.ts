@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CommentRoutingModule } from './comment-routing.module';
 import { CommentsComponent, CommentComponent } from './components/';
 import {CommentService} from "./services";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {CommentService} from "./services";
   ],
   imports: [
     CommonModule,
-    CommentRoutingModule
+    CommentRoutingModule,
+    HttpClientModule
   ],
   providers: [CommentService]
 })

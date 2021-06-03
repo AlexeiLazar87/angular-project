@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { UsersComponent, UserComponent } from './components';
 import {UserService} from "./services";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {UserService} from "./services";
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    HttpClientModule
   ],
   providers: [UserService]
 })
