@@ -9,7 +9,7 @@ import {Post} from "../models";
 })
 export class PostService {
 
-  private url: 'https://jsonplaceholder.typicode.com/posts'
+  private url = 'https://jsonplaceholder.typicode.com/posts'
 
   constructor(private httpClient: HttpClient) { }
 
