@@ -1,0 +1,8 @@
+div {
+  display: flex;
+  background-color: silver;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  border: 2px solid black;
+}
