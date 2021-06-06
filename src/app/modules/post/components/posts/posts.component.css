@@ -1,0 +1,8 @@
+#item {
+  display: flex;
+}
+
+#a, b {
+  width: 50%;
+  border: 2px solid brown;
+}
