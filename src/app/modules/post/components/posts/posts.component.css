@@ -2,7 +2,12 @@
   display: flex;
 }
 
-#a, b {
+#a {
+  width: 50%;
+  border: 2px solid brown;
+}
+
+#b {
   width: 50%;
   border: 2px solid brown;
 }

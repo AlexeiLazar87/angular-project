@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {User} from "../../models";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../services";
@@ -8,14 +8,12 @@ import {UserService} from "../../services";
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
 
   @Input()
   user: User;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) { }
-
-  ngOnInit(): void {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) {
   }
 
   postsOfThisUser() {

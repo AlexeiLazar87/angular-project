@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UserRoutingModule } from './user-routing.module';
-import { UsersComponent,UserComponent } from './components/';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {UserRoutingModule} from './user-routing.module';
+import {UserComponent, UsersComponent, UserWithPostComponent, UserWithPostsComponent} from './components/';
 import {HttpClientModule} from "@angular/common/http";
-import {UserService} from "./services";
-import { UserWithPostsComponent } from './components/user-with-posts/user-with-posts.component';
+import {UserService, PostService} from "./services";
 
 
 @NgModule({
   declarations: [
     UsersComponent,
     UserComponent,
-    UserWithPostsComponent
+    UserWithPostsComponent,
+    UserWithPostComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +19,9 @@ import { UserWithPostsComponent } from './components/user-with-posts/user-with-p
     HttpClientModule
   ],
   providers: [
-    UserService
+    UserService,
+    PostService
   ]
 })
-export class UserModule { }
+export class UserModule {
+}

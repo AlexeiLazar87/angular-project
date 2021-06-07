@@ -1,15 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PostRoutingModule } from './post-routing.module';
-import { PostsComponent,PostComponent } from './components';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PostRoutingModule} from './post-routing.module';
+import {PostsComponent, PostComponent, PostWithCommentsComponent, PostWithCommentComponent} from './components';
 import {HttpClientModule} from "@angular/common/http";
-import {PostService} from "./services";
+import {PostService, CommentService} from "./services";
 
 
 @NgModule({
   declarations: [
     PostsComponent,
-    PostComponent
+    PostComponent,
+    PostWithCommentsComponent,
+    PostWithCommentComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,9 @@ import {PostService} from "./services";
     HttpClientModule
   ],
   providers: [
-    PostService
+    PostService,
+    CommentService
   ]
 })
-export class PostModule { }
+export class PostModule {
+}
