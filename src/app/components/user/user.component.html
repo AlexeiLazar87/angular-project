@@ -3,9 +3,9 @@
   {{singleUser.name}}
   <br>
   <div>
-    <button (click)="userDetails()">details 1</button>
+    <button (click)="userDetails()">details from state</button>
   </div>
   <div>
-    <a [routerLink]="">details 2</a>
+    <a [routerLink]="['userDetailsFromServer',singleUser.id]">details from server</a>
   </div>
 </div>

@@ -6,9 +6,12 @@ import {HttpClientModule} from "@angular/common/http";
 import { UserComponent } from './components/user/user.component';
 import {RouterModule, Routes} from "@angular/router";
 import { UserDetailsFromStateComponent } from './components/user-details-from-state/user-details-from-state.component';
+import { UserDetailsFromServerComponent } from './components/user-details-from-server/user-details-from-server.component';
+import {UserResolveService} from "./services/user-resolve.service";
 
 let routes: Routes = [
-  {path: 'detailsFromState/:id', component: UserDetailsFromStateComponent }
+  {path: 'detailsFromState/:id', component: UserDetailsFromStateComponent },
+  {path: 'userDetailsFromServer/:id', component: UserDetailsFromServerComponent, resolve: {data: UserResolveService} },
 ]
 
 @NgModule({
@@ -16,7 +19,8 @@ let routes: Routes = [
     AppComponent,
     UsersComponent,
     UserComponent,
-    UserDetailsFromStateComponent
+    UserDetailsFromStateComponent,
+    UserDetailsFromServerComponent
   ],
   imports: [
     BrowserModule,
