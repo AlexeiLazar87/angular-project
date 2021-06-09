@@ -12,6 +12,7 @@ import {UserResolveService} from "./services/user-resolve.service";
 let routes: Routes = [
   {path: 'detailsFromState/:id', component: UserDetailsFromStateComponent },
   {path: 'userDetailsFromServer/:id', component: UserDetailsFromServerComponent, resolve: {data: UserResolveService} },
+  {path: 'posts', loadChildren: () => import('./modules/posts/posts.module').then(m=> m.PostsModule )}
 ]
 
 @NgModule({

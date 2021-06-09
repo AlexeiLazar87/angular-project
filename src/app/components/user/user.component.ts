@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from "../../models/User";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -12,6 +12,9 @@ export class UserComponent implements OnInit {
   @Input()
   singleUser: User;
 
+  @Output()
+  lift = new EventEmitter();
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
@@ -23,5 +26,9 @@ export class UserComponent implements OnInit {
       relativeTo: this.activatedRoute,
       state: this.singleUser
     })
+  }
+
+  lifting(): void {
+    this.lift.emit(this.singleUser)
   }
 }

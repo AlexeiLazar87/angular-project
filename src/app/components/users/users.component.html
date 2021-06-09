@@ -1,2 +1,2 @@
 
-<app-user *ngFor="let user of allUsers" [singleUser]="user"></app-user>
+<app-user *ngFor="let user of allUsers" [singleUser]="user" (lift)="catchUser($event)"></app-user>
