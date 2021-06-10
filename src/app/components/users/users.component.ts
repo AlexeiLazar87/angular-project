@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserInterface} from "../../models";
 import {UserService} from "../../services/user.service";
 
@@ -10,12 +10,10 @@ import {UserService} from "../../services/user.service";
 export class UsersComponent implements OnInit {
 
   users: UserInterface[];
-
   chosenUser: UserInterface;
 
-  logUser: any
-
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(value => this.users = value)
@@ -25,7 +23,4 @@ export class UsersComponent implements OnInit {
     this.chosenUser = value;
   }
 
-  login(value: any) {
-    this.logUser = value
-  }
 }
