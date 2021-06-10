@@ -1,10 +1,17 @@
+<div id="a"></div>
 <div>
-  <app-user *ngFor="let u of users" [user]="u" (lift)="catchUser($event)"></app-user>
+  <div>
+    <app-user *ngFor="let u of users" [user]="u" (lift)="catchUser($event)"></app-user>
+  </div>
+  <hr>
+  <div>
+    {{chosenUser?.id}}
+    {{chosenUser?.name}}
+    {{chosenUser?.email}}
+    <button (click)="login()">Login</button>
+  </div>
 </div>
-<hr>
-<div>
-  {{chosenUser?.id}}
-  {{chosenUser?.name}}
-  {{chosenUser?.email}}
-  <button>Login</button>
-</div>
+
+
+
+

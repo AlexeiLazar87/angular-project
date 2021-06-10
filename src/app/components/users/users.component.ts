@@ -13,6 +13,8 @@ export class UsersComponent implements OnInit {
 
   chosenUser: UserInterface;
 
+  logUser: any
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -21,5 +23,9 @@ export class UsersComponent implements OnInit {
 
   catchUser(value: UserInterface) {
     this.chosenUser = value;
+  }
+
+  login(value: any) {
+    this.logUser = value
   }
 }
