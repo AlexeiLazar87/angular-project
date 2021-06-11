@@ -1,0 +1,5 @@
+<form [formGroup]="myForm">
+  <select [formControlName]="'id'">
+    <option [value]="u.id" *ngFor="let u of users">{{u.name}}</option>
+  </select>
+</form>
