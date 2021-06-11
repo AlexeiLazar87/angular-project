@@ -1,5 +1,9 @@
-<form [formGroup]="myForm">
+<form [formGroup]="myForm" (ngSubmit)="save()">
+  <h3>Choose user</h3>
   <select [formControlName]="'id'">
-    <option [value]="u.id" *ngFor="let u of users">{{u.name}}</option>
+    <option [value]="u.id" *ngFor="let u of users">{{u.name}}{{u.email}}</option>
   </select>
+  <button>Show posts of this user</button>
 </form>
+<hr>
+<app-user-post *ngFor="let p of posts" [post]="p"></app-user-post>
